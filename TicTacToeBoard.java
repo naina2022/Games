@@ -2,6 +2,8 @@
  * Naina Purushothaman 
  * 3/30/21
  * TicTacToeBoard.java 
+ * Creates the 3x3 board and has methods to access elements at 
+ * specific locations and a getter method for the board 
  *
 */
 public class TicTacToeBoard
@@ -20,22 +22,27 @@ public class TicTacToeBoard
     {
       for(int j = 0; j < 3; j++)
       {
-        board[i][j] = ""; 
+        board[i][j] = "E"; 
       }
+       
     }
   }
 
   //method to print the board 
-  public void printBoard()
+  public void printBoard(String[][] board1)
   {
-    for(int i = 0; i < 3; i++)
-    {
-      for(int j = 0; j < 3; j++)
-      {
-        System.out.print(board[i][j] + " ");  
-      }
-    }
-    System.out.println(); 
+    System.out.println("  0 1 2"); 
+		for(int x = 0; x < board1.length; x++)   //x is the row 
+		{
+			System.out.print(x); 
+			for(int y = 0; y < board1[0].length; y++)   //y is the column 
+			{
+				System.out.print(" " + board1[x][y]); 
+			} //close y loop 
+
+			//this prints a new line after every row is printed 
+			System.out.println(); 
+		} //close x loop	 
   }
 
   /*method to return the String at a certain position
