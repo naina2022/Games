@@ -1,9 +1,8 @@
 /*
-*
-* Board.java
+* MastermindBoard.java
 * Laxmi and Naina
-*10/16/20
-*
+* 10/16/20
+* Modfied by Naina on 4/5/21 
 */
 
 import java.util.ArrayList;
@@ -34,9 +33,9 @@ public class MastermindBoard
     for(int i = 0; i < 6; i++)
     {
       System.out.println(allColors[i]); 
-    }
+    } //end for loop 
     System.out.println(); 
-  }
+  } //end totalColors() 
 
   //method to statically set the four colors and positions in an array that is passed to method. //creates array for the computer to fill setColors() randomly - Naina and Laxmi 
   ArrayList<String> pickColors = new ArrayList<String>(6); 
@@ -48,8 +47,8 @@ public class MastermindBoard
     pickColors.add("R");
     pickColors.add("P");
     pickColors.add("O");
-    
-  }  
+  }  //end pickColorsFrom() 
+
   //randomly chooses colors for each new game - Laxmi and Naina 
   public String[] setColors()
   {
@@ -61,14 +60,14 @@ public class MastermindBoard
       colors[n] = pickColors.get(rand);
       pickColors.remove(rand);
       length--; 
-    }
+    } //end for 
     /*colors[0] = "B"; 
     colors[1] = "R"; 
     colors[2] = "G"; 
     colors[3] = "Y";
     return colors;  */
     return colors;
-  }
+  } //end setColors() 
 
   //method to check the user's guesses. Returns a number of either red or white pegs- position and color or color respectively
   public int[] checkGuesses(String[] guesses)
