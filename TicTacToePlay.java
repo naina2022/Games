@@ -4,7 +4,6 @@
  * TicTacToePlay.java 
  * Shows rules and has method that facilitate turns and then 
  * checks for a 3 in a row by each player after each turn 
- *
  */
 
 import java.util.Scanner; 
@@ -44,31 +43,34 @@ public class TicTacToePlay
   //the input is the array of guesses and the board 
 	public int checkUser1(int guess[], String play[][])
 	{
+    //takes the row and column guesses from the array and assigns them to separate variables 
 		int row = guess[0]; 
 		int column = guess[1];   
 
+    //checks each guess 
 		if(play[row][column] == "E") 
 		{
 			play[row][column] = "X";  
       return 1; 
-		} 
+		} //end if 
 		else if(play[row][column] == "X") 
 		{
 			System.out.println("This spot is taken. Pick another spot.");
       return 0;  
-		}
+		} //end else if 
 		else if(play[row][column] == "O") 
 		{
 			System.out.println("This spot is taken. Pick another spot.");
       return 0; 
-		} 
+		} //end else if 
     return 0; 
-	}
+	} //end checkUser1() 
 
   //method which checks Player 2's (O) guesses and returns the changed guess board  
   //the input is the array of guesses and the board 
   public int checkUser2(int guess[], String play[][])
 	{
+    //takes the row and column guesses from the array and assigns them to separate variables 
 		int row = guess[0]; 
 		int column = guess[1];   
 
@@ -76,19 +78,19 @@ public class TicTacToePlay
 		{
 			play[row][column]= "O"; 
       return 1;  
-		} 
+		} //end if 
 		else if(play[row][column].equals("O")) 
 		{
 			System.out.println("This spot is taken. Pick another spot."); 
       return 0; 
-		}
+		} //end else if 
 		else if(play[row][column].equals("X")) 
 		{
 			System.out.println("This spot is taken. Pick another spot.");
       return 0; 
-		} 
+		} //end else if 
     return 0; 
-	}
+	} //end checkUser2() 
 
   //method which checks for a three in a row for Player 1(X) 
 	//passes the board String[][] arary  
@@ -99,39 +101,41 @@ public class TicTacToePlay
      if(arr[0][0].equals("X") && arr[0][1].equals("X") && arr[0][2].equals("X"))
      {
        return true; 
-     }
+     } //end if 
      else if(arr[1][0].equals("X") && arr[1][1].equals("X") && arr[1][2].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[2][0].equals("X") && arr[2][1].equals("X") && arr[2][2].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][0].equals("X") && arr[1][0].equals("X") && arr[2][0].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][1].equals("X") && arr[1][1].equals("X") && arr[2][1].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][2].equals("X") && arr[1][2].equals("X") && arr[2][2].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
     
      //checks diagonals 
      else if(arr[0][0].equals("X") && arr[1][1].equals("X") && arr[2][2].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][2].equals("X") && arr[1][1].equals("X") && arr[2][0].equals("X"))
      {
        return true; 
-     }
+     } //end else if 
+
+  //returns false if there are no three in a rows 
 	return false; 
-  }//end method 
+  }//end checkThree1() 
 
 //method which checks for a three in a row for Player 2(O) 
 	//passes the board String[][] arary  
@@ -142,39 +146,41 @@ public class TicTacToePlay
      if(arr[0][0].equals("O") && arr[0][1].equals("O") && arr[0][2].equals("O"))
      {
        return true; 
-     }
+     } //end if 
      else if(arr[1][0].equals("O") && arr[1][1].equals("O") && arr[1][2].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[2][0].equals("O") && arr[2][1].equals("O") && arr[2][2].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][0].equals("O") && arr[1][0].equals("O") && arr[2][0].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][1].equals("O") && arr[1][1].equals("O") && arr[2][1].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][2].equals("O") && arr[1][2].equals("O") && arr[2][2].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
     
      //checks diagonals 
      else if(arr[0][0].equals("O") && arr[1][1].equals("O") && arr[2][2].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
      else if(arr[0][2].equals("O") && arr[1][1].equals("O") && arr[2][0].equals("O"))
      {
        return true; 
-     }
+     } //end else if 
+
+  //returns false if there are no three in a rows 
 	return false; 
-  }//end method 
+  }//end checkThree2()  
 
   //method that checks if the players tie 
   public boolean checkTie(String arr[][])
@@ -188,15 +194,15 @@ public class TicTacToePlay
           if(arr[i][j].equals("E"))
           {
             flag++; 
-          }
-        }
-      }
+          } //end if 
+        } //end inner for 
+      } //end outer for 
       if(flag != 0)
       {
         return false; 
-      }
+      } //end if 
       return true; 
-  }
+  } //end checkTie() method 
 
 }//end class
 
