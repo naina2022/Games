@@ -1,4 +1,5 @@
-/* Connect Four 
+/* 
+ * Connect Four 
  * Naina Purushothaman 
  * 4/9/21 
  * ConnectFourMain.java 
@@ -7,6 +8,7 @@
 
 public class ConnectFourMain
 {
+  //play method which plays the game 
 	public void play()
 	{
 
@@ -25,8 +27,8 @@ public class ConnectFourMain
 			for(int h = 0; h < 7; h++)
 			{
 				board[j][h] = 0; 
-			}
-		}
+			} //end inner for 
+		} //end outer for 
 	
 		//prints board before first guess 
 		b1.print(board); 
@@ -46,10 +48,11 @@ public class ConnectFourMain
 			if(b1.checkDown(board) || b1.checkAcross(board) || b1.checkDiagonal(board))
 			{
 				counter++; 
-			}
-		}
+			} //end if 
+		} //end do while 
 		while(counter == 0); 
 
+    //end of game message 
 		System.out.println(); 
 		System.out.println("Four in a Row!"); 
 		System.out.println(); 
