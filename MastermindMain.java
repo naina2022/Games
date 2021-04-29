@@ -1,13 +1,15 @@
 /*
-*
-* Main.java
+* MastermindMain.java
 * Laxmi and Naina
-*10/16/20
-*
+* 10/16/20
+* Modified by Naina 
 */
 
 import java.util.Scanner; 
+
 public class MastermindMain {
+
+  //method that plays the game 
   public void play() {
     //creates a String array to hold the colors randomly set in Board - Naina  
     String [] colors1 = new String[4]; 
@@ -42,8 +44,8 @@ public class MastermindMain {
       for(int j = 0; j < 4; j++)
       {
         display[i][j] = "0"; 
-      }
-    }
+      } //end inner for 
+    } //end outer for 
 
     //variable that keeps track of the row number which the user's guess should go into in the array 
     int rowCount = 0; 
@@ -85,9 +87,9 @@ public class MastermindMain {
         for(int j = 0; j < 4; j++)
         {
           System.out.print(display[i][j] + " "); 
-        }
+        } //end inner for 
          System.out.println("|" + trackPins[i][0] + " " + trackPins[i][1]);  
-      }
+      } //end outer for 
 
       //prints out the user's feeback for the number of red pins and the number of white pins - Laxmi 
       System.out.println("Red pins: " + pins[0]); 
@@ -119,14 +121,14 @@ public class MastermindMain {
     if (pins[0] ==4)
     {
       System.out.println("Congratulations! You broke the code!");
-    }
+    } //end if 
     
     //user knows they ran out of chances and they lost if the number of tries is greater than 10 - Laxmi 
     if (numTries == 10)
     {
       System.out.println("------------------------------------"); 
       System.out.println("You lost! You did not break the code in 10 tries!");
-    }
+    } //end if 
 
     //prints out the right answer
     System.out.println();  
@@ -135,6 +137,6 @@ public class MastermindMain {
     for(int i = 0; i < 4; i++)
     {
       System.out.print(colors1[i]); 
-    }
+    } //end for 
   } //end method play
 } //end class
