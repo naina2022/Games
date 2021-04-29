@@ -1,16 +1,18 @@
 /*
-*
-* User.java
+* MastermindUser.java
 * Laxmi and Naina
-*10/16/20
-*
+* 10/16/20
+* Modified by Naina 
 */
+
 import java.util.Scanner; 
+
 public class MastermindUser
 {
   //method which displays the rules to the user - Naina 
   public void showRules()
   {
+    System.out.println("WELCOME TO MASTERMIND"); 
     System.out.println(); 
     System.out.println("RULES"); 
     System.out.println("- There are four colors in four positions that you have to guess."); 
