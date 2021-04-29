@@ -4,11 +4,11 @@
  * TicTacToeMain.java 
  * Has the play() method which actually plays the game by 
  * creating instances of the TicTacToeBoard and TicTacToePlay classes 
- *
  */
 
 public class TicTacToeMain
 {
+    //method that plays the game 
   	public void play() 
 	  {
 		TicTacToeBoard t1 = new TicTacToeBoard(); //a constructor 
@@ -57,14 +57,14 @@ public class TicTacToeMain
       {
         System.out.print("Game Over. Player X Wins."); 
         System.exit(0); 
-      }
+      } //end if 
 
       //checks if the players tied after this move 
       if(p1.checkTie(play))
       {
         System.out.print("Tie"); 
         System.exit(0); 
-      }
+      } //end if 
 
       //player 2 guess and check 
       do
@@ -79,14 +79,14 @@ public class TicTacToeMain
       {
         System.out.print("Game Over. Player O Wins."); 
         System.exit(0); 
-      }
+      } //end if 
 
       //checks if the players tied after this move 
       if(p1.checkTie(play))
       {
         System.out.print("Tie"); 
         System.exit(0); 
-      }
+      } //end if 
 
       //clears the console 
       System.out.print("\033[H\033[2J");  
@@ -111,4 +111,4 @@ public class TicTacToeMain
 		t1.printBoard(play); 
  
 	}  //close play method 
-}
+} //close class 
