@@ -14,7 +14,6 @@ public class ConnectFourBoard
 	//method which displays the rules 
 	public void rules()
 	{
-		System.out.println(); 
 		System.out.println("Welcome to Connect Four!"); 
 		System.out.println(); 
 		System.out.println("Here are the rules: "); 
@@ -35,7 +34,7 @@ public class ConnectFourBoard
 
 		//clears screen
 		System.out.print("\033[H\033[2J");  
-    		System.out.flush();
+    System.out.flush();
 	
 		//checks if the row is available 
 		if(arr[5][column - 1] == 1 || arr[5][column - 1] == 2)
@@ -44,32 +43,35 @@ public class ConnectFourBoard
 			do
 			{	
 				counter--; 	
-			}
+			} //end do while 
 			while(arr[counter][column - 1] == 1 || arr[counter][column - 1] == 2); 
-		}
+		} //end if 
 
+    //assigns the chosen spot by the user to 1 to indicate that they have placed a chip there 
 		arr[counter][column - 1] = 1; 
 
+    //prints the board 
 		print(arr);
  
 		//checks if Player 1 has gotten a four down or four across 
 		if(checkDown(arr) || checkAcross(arr) || checkDiagonal(arr))
 		{
 			return arr; 
-		}
+		} //end if
 
+
+    //resets variables to do the same thing for Player 2 
 		row = 0; 
 		column = 0; 
 		counter = 5; 
 		
 		//Player 2's turn, prompts Player 2 for their column guess
-  
 		System.out.print("Player 2: Which column do you want to place chip? "); 
 		column = input.nextInt(); 
 
 		//clears screen
 		System.out.print("\033[H\033[2J");  
-    		System.out.flush();
+    System.out.flush();
 	
 		//checks if the row is available 
 		if(arr[5][column - 1] == 1 || arr[5][column - 1] == 2)
@@ -78,14 +80,14 @@ public class ConnectFourBoard
 			do
 			{	
 				counter--; 	
-			}
+			} //end do while 
 			while(arr[counter][column - 1] == 1 || arr[counter][column - 1] == 2); 
-		}
+		} //end if 
 
+    //assigns the chosen spot to 2 to indicate that player 2 has placed a chip there 
 		arr[counter][column - 1] = 2; 
 
-		return arr; 
-
+		return arr;
 	} //end of method 
 
 	//method to print array (board) 
@@ -95,16 +97,17 @@ public class ConnectFourBoard
 		System.out.println(); 
 		System.out.println("1   2   3   4   5   6   7"); 
 		System.out.println("---------------------------"); 
+
 		for(int j = 0; j < 6; j++)	
 		{
 			for(int h = 0; h < 7;  h++)
 			{
 				System.out.print(arr[j][h] + " | "); 
-			}
+			} //end of inner for 
 			System.out.println(); 
-		}
+		} //end of outer for 
 		System.out.println(); 
-	} //end of method 
+	} //end of print() method 
 
 	//method which checks if there are four down 
 	public boolean checkDown(int arr[][])
@@ -116,15 +119,15 @@ public class ConnectFourBoard
 				if(arr[j][h] == 1 && arr[j+1][h] == 1 && arr[j+2][h] == 1 && arr[j+3][h] == 1)
 				{
 					return true; 
-				}
+				} //end of if 
 				else if(arr[j][h] == 2 && arr[j+1][h] == 2 && arr[j+2][h] == 2 && arr[j+3][h] == 2)
 				{
 					return true; 
-				}
+				} //end of else if 
 			} //end of inner for loop 
 		} //end of outer for loop 
 		return false; 
-	} //end of method 
+	} //end of checkDown() method  
 
 	//method which checks if there are four across 
 	public boolean checkAcross(int arr[][])
@@ -136,15 +139,15 @@ public class ConnectFourBoard
 				if(arr[h][j] == 1 && arr[h][j+1] == 1 && arr[h][j+2] == 1 && arr[h][j+3] == 1)
 				{
 					return true; 
-				}
+				} //end if 
 				else if(arr[h][j] == 2 && arr[h][j+1] == 2 && arr[h][j+2] == 2 && arr[h][j+3] == 2)
 				{
 					return true; 
-				}
+				} //end else if 
 			} //end of inner for loop 
 		} //end of outer for loop 
 		return false; 
-	} //end of method 
+	} //end of checkAcross() method  
 
 	//checks if there is four diagonal 
 	public boolean checkDiagonal(int arr[][]) 
@@ -157,11 +160,11 @@ public class ConnectFourBoard
 				if(arr[j][h] == 1 && arr[j-1][h-1] == 1 && arr[j-2][h-2] == 1 && arr[j-3][h-3] == 1)
 				{
 					return true; 
-				}
+				} //end of if 
 				else if(arr[j][h] == 2 && arr[j-1][h-1] == 2 && arr[j-2][h-2] == 2 && arr[j-3][h-3] == 2)
 				{
 					return true; 
-				}
+				} //end of else if 
 			} //end of inner for loop 
 		} //end of outer for loop 
 
@@ -173,16 +176,15 @@ public class ConnectFourBoard
 				if(arr[j][h] == 1 && arr[j-1][h+1] == 1 && arr[j-2][h+2] == 1 && arr[j-3][h+3] == 1)
 				{
 					return true; 
-				}
+				} //end of if 
 				else if(arr[j][h] == 2 && arr[j-1][h+1] == 2 && arr[j-2][h+2] == 2 && arr[j-3][h+3] == 2)
 				{
 					return true; 
-				}
+				} //end of else if 
 			} //end of inner for loop 
 		} //end of outer for loop 
 
 		//returns false if there are no diagonals with positive or negative slope 
 		return false;
-
-	} //end of method 
-}
+	} //end of checkDiagonal() method  
+} //end of class 
