@@ -23,6 +23,7 @@ class Main
     System.out.println("TicTacToe (3)"); 
     System.out.println("Connect Four (4)"); 
     System.out.println("Twenty Questions (5)"); 
+    System.out.println("Hangman (6)"); 
     System.out.println(); 
 
     boolean check = false; 
@@ -33,7 +34,7 @@ class Main
     {
       System.out.print("Which game do you want to play. Enter a number: "); 
       answer = input.nextInt();
-      if(answer == 1 || answer == 2|| answer == 3 || answer == 4 || answer == 5)
+      if(answer == 1 || answer == 2|| answer == 3 || answer == 4 || answer == 5 || answer == 6)
       {
         check = true; 
       } //end if
@@ -105,6 +106,19 @@ class Main
 
       //calls the method in TwentyQuestionsMain called play() which plays the game 
       m5.play(); 
+    } //end else if
+    else if(answer == 6)
+    {
+      //clears the console 
+      System.out.print("\033[H\033[2J");  
+      System.out.flush();
+      System.out.println();
+
+      //creates an instance of the TwentyQuestionsMain class 
+      HangmanMain m6 = new HangmanMain(); 
+
+      //calls the method in TwentyQuestionsMain called play() which plays the game 
+      m6.play(); 
     } //end else if
   } //end main method 
 } //end class 
